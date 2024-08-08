@@ -6,24 +6,41 @@
     <title>local storage</title>
 </head>
 <body>
-    <input type="text" id="Input-text" placeholder="Enter Your Name" /> <br>
-    <button  id="save-btn"  onclick="Savebtn()">Save</button>
-    <button onclick="Logoutbtn()" >Log out</button>
-    <h2 id="gretting">Hello User</h2>
-    <script>
-        const InputElement=document.getElementById("Input-text")
-        const OutputGreting = document.getElementById("gretting");
-        const Savebutn =document.getElementById("save-btn")
-           function Savebtn(){
+    <div class="container">
+        <input type="text" id="Input-text" placeholder="Enter Your Name" /> <br>
+        <div class="btn-container">
+          <button  id="save-btn"  onclick="Savebtn()">Save</button>
+          <button id="logout-btn" onclick="Logoutbutn()" >Log out</button>
+       </div>
+        <h2 id="gretting">Hello User</h2>
+   </div>
 
-                let UserName = InputElement.value;
-                if(!UserName){
-                    alert("Please enter your Name");
-                    return ;
-                }
-                localStorage.setItem('Name', UserName);
-            OutputGreting.innerText= `Hello ${UserName}`;
-           }
-    </script>
+   <script>
+    const InputElement=document.getElementById("Input-text");
+    const OutputGreting = document.getElementById("gretting");
+    const Savebutn =document.getElementById("save-btn");
+    const Logoutbtn =document.getElementById("logout-btn");
+       function Savebtn(){
+            let UserName = InputElement.value;
+            if(!UserName){
+                alert("Please enter your Name");
+                return ;
+            }
+            localStorage.setItem('Name', UserName);
+        OutputGreting.innerText= `Hello ${UserName}`;
+        Savebutn.style.display="none";
+        InputElement.style.display="none";
+       }
+       let GetName= localStorage.getItem("Name");
+       if(GetName){
+          OutputGreting.innerText=`Hello ${GetName}`;
+          Savebutn.style.display="none";
+          InputElement.style.display="none";
+       }
+       function Logoutbutn(){
+          localStorage.removeItem("Name");
+          window.location.reload();
+       }
+</script>
 </body>
 </html>
