@@ -4,48 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>local storage</title>
-    <style>
-    body{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        height: 100%;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .container{
-        height: 300px;
-        width: 500px;
-        background-color: #84e184        ;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        border-radius: 5px;
-        margin-top: 50px auto;
-    }
-    .container-input{
-        height: 50px;
-        width: 400px;
-    }
-    .btn-container{
-        display: flex;
-    }
-    .btn-container button{
-        margin: 0px 10px;
-        cursor: pointer;
-    }
-    .btn{
-        background-color: #ff0000;
-        color: #fff;
-        border: none;
-        height: 30px;
-        width: 80px;
-        border-radius: 20px;
-    }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </style>
 </head>
 <body>
@@ -57,33 +16,7 @@
        </div>
         <h2 id="gretting">Hello User</h2>
    </div>
-
-   <script>
-    const InputElement=document.getElementById("Input-text");
-    const OutputGreting = document.getElementById("gretting");
-    const Savebutn =document.getElementById("save-btn");
-    const Logoutbtn =document.getElementById("logout-btn");
-       function Savebtn(){
-            let UserName = InputElement.value;
-            if(!UserName){
-                alert("Please enter your Name");
-                return ;
-            }
-            localStorage.setItem('Name', UserName);
-        OutputGreting.innerText= `Hello ${UserName}`;
-        Savebutn.style.display="none";
-        InputElement.style.display="none";
-       }
-       let GetName= localStorage.getItem("Name");
-       if(GetName){
-          OutputGreting.innerText=`Hello ${GetName}`;
-          Savebutn.style.display="none";
-          InputElement.style.display="none";
-       }
-       function Logoutbutn(){
-          localStorage.removeItem("Name");
-          window.location.reload();
-       }
+   <script src="script.js">
 </script>
 </body>
 </html>

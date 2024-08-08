@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    height: 300px;
+    width: 500px;
+    background-color: #84e184        ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    margin-top: 50px auto;
+}
+.container-input{
+    height: 50px;
+    width: 400px;
+}
+.btn-container{
+    display: flex;
+}
+.btn-container button{
+    margin: 0px 10px;
+    cursor: pointer;
+}
+.btn{
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    height: 30px;
+    width: 80px;
+    border-radius: 20px;
+}
