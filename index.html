@@ -6,8 +6,24 @@
     <title>local storage</title>
 </head>
 <body>
-    <input type="text" placeholder="Enter Your Name" /> <br>
-    <button>Save</button>
-    <button>Logn out</button>
+    <input type="text" id="Input-text" placeholder="Enter Your Name" /> <br>
+    <button  id="save-btn"  onclick="Savebtn()">Save</button>
+    <button onclick="Logoutbtn()" >Log out</button>
+    <h2 id="gretting">Hello User</h2>
+    <script>
+        const InputElement=document.getElementById("Input-text")
+        const OutputGreting = document.getElementById("gretting");
+        const Savebutn =document.getElementById("save-btn")
+           function Savebtn(){
+
+                let UserName = InputElement.value;
+                if(!UserName){
+                    alert("Please enter your Name");
+                    return ;
+                }
+                localStorage.setItem('Name', UserName);
+            OutputGreting.innerText= `Hello ${UserName}`;
+           }
+    </script>
 </body>
 </html>
